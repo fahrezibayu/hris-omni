@@ -14,6 +14,40 @@ class Tunggu_m extends CI_Model
         return $query;
     }
 
+	public function search($bulan,$tahun)
+    {
+
+		if ($bulan == "" && $tahun != "") {
+			$this->db->select('nama_pegawai, divisi_d, pengajuan_cuti.*');
+			$this->db->from('pengajuan_cuti');
+			$this->db->join('users', 'pengajuan_cuti.user_id = users.id');
+			$this->db->join('divisi', 'pengajuan_cuti.divisi_id = divisi.id_divisi');
+			$this->db->where('SUBSTRING(pengajuan_cuti.created_at,7,4)',$tahun);
+			$this->db->order_by('id', 'DESC');
+			$query = $this->db->get()->result_array();
+			return $query;
+		} else if ($bulan != "" && $tahun == "") {
+			$this->db->select('nama_pegawai, divisi_d, pengajuan_cuti.*');
+			$this->db->from('pengajuan_cuti');
+			$this->db->join('users', 'pengajuan_cuti.user_id = users.id');
+			$this->db->join('divisi', 'pengajuan_cuti.divisi_id = divisi.id_divisi');
+			$this->db->where('SUBSTRING(pengajuan_cuti.created_at,4,2)',$bulan);
+			$this->db->order_by('id', 'DESC');
+			$query = $this->db->get()->result_array();
+			return $query;
+		} else if ($bulan != "" && $tahun != "") {
+			$this->db->select('nama_pegawai, divisi_d, pengajuan_cuti.*');
+			$this->db->from('pengajuan_cuti');
+			$this->db->join('users', 'pengajuan_cuti.user_id = users.id');
+			$this->db->join('divisi', 'pengajuan_cuti.divisi_id = divisi.id_divisi');
+			$this->db->where('SUBSTRING(pengajuan_cuti.created_at,7,4)',$tahun);
+			$this->db->where('SUBSTRING(pengajuan_cuti.created_at,4,2)',$bulan);
+			$this->db->order_by('id', 'DESC');
+			$query = $this->db->get()->result_array();
+			return $query;
+		}
+    }
+
     public function get_cuti($id_user)
     {
         $this->db->select('nama_pegawai, divisi_d, pengajuan_cuti.*');

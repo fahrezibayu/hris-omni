@@ -14,6 +14,18 @@ class Approval_m extends CI_Model
         return $query;
     }
 
+	public function search($date1,$date2)
+	{
+		$this->db->select('nama_pegawai, divisi_d, pengajuan_cuti.*');
+        $this->db->from('pengajuan_cuti');
+        $this->db->join('users', 'pengajuan_cuti.user_id = users.id');
+        $this->db->join('divisi', 'pengajuan_cuti.divisi_id = divisi.id_divisi');
+		$this->db->where("pengajuan_cuti.created_at BETWEEN '$date1' AND '$date2'");
+        $this->db->order_by('id', 'DESC');
+        $query = $this->db->get()->result_array();
+        return $query;
+	}
+
     // public function add($post)
     // {
     //     $params = [

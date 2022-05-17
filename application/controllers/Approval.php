@@ -112,4 +112,11 @@ class Approval extends CI_Controller
         }
         echo "<script>window.location='" . site_url('approval') . "';</script>";
     }
+
+	public function lap_approval()
+	{
+		$data['data_cuti'] = $this->tunggu_m->get();
+        $this->template->load('template', 'approval/approval_lap', $data);
+	}
+
 }
