@@ -22,13 +22,13 @@
 
 		</div>
 		<div class="box-body table-responsive">
-			<table class="table table-bordered table-striped nowrap" id="laporan_karyawan">
+			<table class="table table-bordered table-striped nowrap example-class" id="laporan_karyawan">
 				<thead>
 					<tr class="text-sm">
 						<th>No</th>
 						<th>Nama</th>
-						<th>Tanggal Masuk</th>
-						<th>Tanggal Lahir</th>
+						<th>Tgl Masuk</th>
+						<th>Tgl Lahir</th>
 						<th>Tempat Lahir</th>
 						<th>JK</th>
 						<th>Alamat</th>

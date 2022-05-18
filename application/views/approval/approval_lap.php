@@ -13,11 +13,11 @@
 				</div>
 				<!-- /.box-header -->
 				<!-- form start -->
-				<form class="form-horizontal" action="#" method="post">
+				<form action="#" method="post">
 					<div class="box-body">
-						<div class="col-md-6">
+						<div class="col-md-4">
 							<div class="form-group">
-								<label class="col-sm-2 control-label">Bulan</label>
+								<label>Bulan</label>
 								<select class="form-control bulan" name="bulan">
 									<option value="">--Pilih Bulan--</option>
 									<option value="01">Januari</option>
@@ -35,9 +35,9 @@
 								</select>
 							</div>
 						</div>
-						<div class="col-md-6">
+						<div class="col-md-4">
 							<div class="form-group">
-								<label class="col-sm-2 control-label">Tahun</label>
+								<label>Tahun</label>
 
 								<select class="form-control tahun" name="tahun">
 									<option value="">--Pilih Tahun--</option>
@@ -45,6 +45,20 @@
 									for ($i = 2020; $i < $tahun + 5; $i++) { ?>
 										<option value="<?php echo $i ?>"><?php echo $i ?></option>
 									<?php } ?>
+								</select>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="form-group">
+								<label> Karyawan </label>
+								<select name="id_karyawan" id="id_karyawan" class="form-control select2">
+									<option value=""> Silahkan pilih karyawan </option>
+									<?php
+										foreach ($karyawan as $row) {
+											echo "<option value='$row[user_id]'> $row[nama_pegawai] </option>";
+										}
+									?>
+									<option value="all"> Semua Karyawan </option>
 								</select>
 							</div>
 						</div>
