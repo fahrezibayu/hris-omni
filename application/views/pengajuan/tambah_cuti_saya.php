@@ -34,7 +34,7 @@
                         ?>
                         <div class="form-group">
                             <label for="nama_pegawai">Nama Pegawai</label>
-                            <select class="js-example-basic-single" style="width: 338px;" name="nama_pegawai">
+                            <select class="form-control select2" style="width: 338px;" name="nama_pegawai">
                                 <option></option>
                                 <?php foreach ($users as $user) : ?>
                                     <?php if ($user['id'] == $result['user_id']) : ?>
@@ -109,7 +109,6 @@
 
 <script>
     $(document).ready(function() {
-        $('.js-example-basic-single').select2();
         $('.input-tanggal-mulai').datepicker();
         $('.input-tanggal-sampai').datepicker();
     });
