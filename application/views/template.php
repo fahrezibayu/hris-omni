@@ -407,18 +407,27 @@
 						extend: 'print',
 						text: 'Print',
 						title: 'Daftar Approval Cuti',
+						exportOptions: {
+							columns: [1, 2, 3, 4, 5, 6, 7, 8]
+						}
 					},
 					{
 						extend: 'pdf',
 						text: 'Export Pdf',
 						title: 'Daftar Approval Cuti',
 						orientation: 'landscape',
+						exportOptions: {
+							columns: [1, 2, 3, 4, 5, 6, 7, 8]
+						},
 						pageSize: 'LEGAL'
 					},
 					{
 						extend: 'excel',
 						text: 'Export Excel',
 						title: 'Daftar Approval Cuti',
+						exportOptions: {
+							columns: [1, 2, 3, 4, 5, 6, 7, 8]
+						}
 					},
 				],
 				"lengthMenu": [
