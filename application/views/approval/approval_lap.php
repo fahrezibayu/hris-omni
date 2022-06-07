@@ -18,7 +18,7 @@
 						<div class="col-md-4">
 							<div class="form-group">
 								<label>Bulan</label>
-								<select class="form-control bulan" name="bulan">
+								<select class="form-control select2" name="bulan">
 									<option value="">--Pilih Bulan--</option>
 									<option value="01">Januari</option>
 									<option value="02">Februari</option>
@@ -39,7 +39,7 @@
 							<div class="form-group">
 								<label>Tahun</label>
 
-								<select class="form-control tahun" name="tahun">
+								<select class="form-control select2" name="tahun">
 									<option value="">--Pilih Tahun--</option>
 									<?php $tahun = date('Y');
 									for ($i = 2020; $i < $tahun + 5; $i++) { ?>
